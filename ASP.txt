@@ -1,0 +1,68 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Template for a SPARC file
+%% Author: 
+%% Description:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+sorts
+    % movie titles
+    #movies = {star_wars, the_matrix, inception, the_godfather, the_shawshank_redemption}.
+    
+    % movie genres
+    #genres = {scifi, action, thriller, drama}.
+    
+    % % directors
+    #directors = {george_lucas, the_wachowskis, christopher_nolan, francis_ford_coppola, frank_darabont}.
+
+predicates
+%     % genre(X, Y) denotes that movie X belongs to genre Y
+    genre(#movies, #genres).
+    
+%     % directed_by(X, Y) denotes that movie X is directed by director Y
+    directed_by(#movies, #directors).
+    
+%     % movie_title(X) denotes that X is a movie title
+    movie_title(#movies).
+
+rules
+    % movie genre information
+    genre(star_wars, scifi).
+    genre(the_matrix, scifi).
+    genre(inception, thriller).
+    genre(the_godfather, drama).
+    genre(the_shawshank_redemption, drama).
+    
+    
+    % director information
+    directed_by(star_wars, george_lucas).
+    directed_by(the_matrix, the_wachowskis).
+    directed_by(inception, christopher_nolan).
+    directed_by(the_godfather, francis_ford_coppola).
+    directed_by(the_shawshank_redemption, frank_darabont).
+    
+    % movie title information
+    movie_title(star_wars).
+    movie_title(the_matrix).
+    movie_title(inception).
+    movie_title(the_godfather).
+    movie_title(the_shawshank_redemption).
+    
+    % queries
+    % What are the genres of Inception?
+    % expected answer: thriller
+    % genre(inception, What).
+    
+    % % Who directed Star Wars?
+    % % expected answer: George Lucas
+    % directed_by(star_wars, Who).
+    
+    % % What movies are dramas?
+    % % expected answer: The Godfather and The Shawshank Redemption
+    % genre(What, drama), movie_title(What).
+    
+    % % What genres do the Wachowskis direct movies in?
+    % % expected answer: sci-fi and action
+    % directed_by(Movie, the_wachowskis), genre(Movie, What).
+    
+    % % What movies are directed by Francis Ford Coppola?
+    % % expected answer: The Godfather
+    % directed_by(Movie, francis_ford_coppola), movie_title(Movie).

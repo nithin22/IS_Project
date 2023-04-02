@@ -11,7 +11,7 @@
       </ng-container>
     </div>
     <div class="chat-footer input-group mb-3">
-      <input type="text" class="form-control rounded-8" placeholder="Recipient's username"
+      <input type="text" class="form-control rounded-8" placeholder="Enter Message"
         aria-label="Recipient's username" aria-describedby="button-addon2" id="chat-text" [(ngModel)]="chatInput">
       <button class="btn btn-outline-secondary rounded-8" type="button" id="send-button" (click)="send()"
         [disabled]="chatInput.length<=0">Button</button>

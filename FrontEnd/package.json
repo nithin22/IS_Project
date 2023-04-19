@@ -20,7 +20,10 @@
     "@angular/router": "^15.2.0",
     "@ng-bootstrap/ng-bootstrap": "^14.0.1",
     "@popperjs/core": "^2.11.6",
+    "@tkrotoff/bootstrap-input-spinner": "^0.21.2",
     "bootstrap": "^5.2.3",
+    "fuzzyset": "^1.0.7",
+    "ngx-bootstrap-icons": "^1.9.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
@@ -30,6 +33,7 @@
     "@angular/cli": "~15.2.1",
     "@angular/compiler-cli": "^15.2.0",
     "@angular/localize": "^15.2.0",
+    "@types/fuzzyset": "^1.0.4",
     "@types/jasmine": "~4.3.0",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",

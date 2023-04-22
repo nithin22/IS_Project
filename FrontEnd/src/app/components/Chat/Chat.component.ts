@@ -65,7 +65,7 @@ export class ChatComponent implements OnInit {
     console.log('This Question -->' + this.chatInput);
     //Get Query from input taken from above
     let data = this.aspQueryGeneratorService.genQuery(this.chatInput);
-    if (data === '') {
+    if (data === '' || data == undefined) {
       this.chatMessages.push({
         messages:
           'Sorry! Could not find the answer,Try again with different Question.',

@@ -67,7 +67,8 @@ export class ChatComponent implements OnInit {
     let data = this.aspQueryGeneratorService.genQuery(this.chatInput);
     if (data != '') {
       this.chatMessages.push({
-        messages: "Sorry! Could not find the answer,Try again with different Question.",
+        messages:
+          'Sorry! Could not find the answer,Try again with different Question.',
         user: this.user1,
         created_at: Date.now(),
       });

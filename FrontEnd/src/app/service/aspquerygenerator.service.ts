@@ -14,18 +14,20 @@ export class AspquerygeneratorService {
   fuzzSet: FuzzySet;
   genQuery(value: string): any {
     try {
+      //Removing Grammer from the question
       let stopwords: string[] = ["of", "the", "a", "an", "any", "is", "can", "who", "what", "why", "whom", "are"];
 
       let values: string[] = value.toLowerCase().replace(/[^a-zA-Z ]/g, "").split(" ").filter((val) => !stopwords.includes(val));
       values = values.reverse();
       value = values.join(" ");
+      //To get Anwser in Fuzzset
       var question = this.fuzzSet.get(value);
-      return (this.getQuery(question));
+      return (this.createPayLoad(question));
     } catch (error) {
       console.error(error);
     }
   }
-  getQuery(question: any): any {
+  private createPayLoad(question: any): any {
     if (question != null) {
       var mainkey = question[0][1].replace('speak ', '');
       var answerarr = mainkey.split(' ');
@@ -63,6 +65,7 @@ export class AspquerygeneratorService {
     contstring = contstring[1].split("rules\n");
     sortstring = contstring[0].split('.');
     sortstring.splice(-1, 1);
+    //to Create Query set From Rules
     sortstring.forEach((d: string) => {
       let part: string[] = d.replace(/\n/g, '').trim().split('(');
       let func: string = part[0];
@@ -95,7 +98,6 @@ export class AspquerygeneratorService {
             this.fuzzSet.add(key2);
         }
       }
-
     }
 
     // return all_predicates;
